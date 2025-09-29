@@ -42,8 +42,7 @@ describe('Dummy Json Api', () => {
       await p
         .spec()
         .get(`${baseUrl}/posts/250`)
-        .expectStatus(StatusCodes.OK)
-        .inspect();
+        .expectStatus(StatusCodes.OK);
     });
     it('Add a new post created', async () => {
       await p
@@ -73,8 +72,7 @@ describe('Dummy Json Api', () => {
         .expectJsonLike({
           id: 250,
           title: 'The peaceful village.'
-        })
-        .inspect();
+        });
     });
     it('Update post failed', async () => {
       await p
@@ -92,8 +90,7 @@ describe('Dummy Json Api', () => {
       await p
         .spec()
         .get(`${baseUrl}/products/search?q=phone`)
-        .expectStatus(StatusCodes.OK)
-        .inspect();
+        .expectStatus(StatusCodes.OK);
     });
     it('Search Product not found', async () => {
       await p
@@ -118,8 +115,7 @@ describe('Dummy Json Api', () => {
         .expectJsonLike({
           title: 'BMW Pencil',
           brand: 'BMW'
-        })
-        .inspect(); 
+        });
     });
     it('Update an existing product', async () => {
       await p
@@ -134,8 +130,7 @@ describe('Dummy Json Api', () => {
           id: 1,
           title: 'Updated BMW Pencil',
           price: 4.99
-        })
-        .inspect();
+        });
     });
     it('Delete an existing product', async () => {
       await p
@@ -144,8 +139,7 @@ describe('Dummy Json Api', () => {
         .expectStatus(200)
         .expectJsonLike({
           id: 1
-        })
-        .inspect();
+        });
     });    
   });
 
